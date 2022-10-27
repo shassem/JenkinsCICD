@@ -5,19 +5,11 @@ pipeline {
 
         git "Default"
     }
-    // stages {
-    //     stage('Preparation') {
-    //         steps {
-    //             // Get some code from a GitHub repository
-    //             git 'https://github.com/mahmoud254/jenkins_nodejs_example.git'
-
-    //         }
-    //     }
         
         stage('Ci') {
             steps {
                     
-                withCredentials([usernamePassword(credentialsId: 'dockerhub', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) { 
+                withCredentials([usernamePassword(credentialsId: 'Dockerhub', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) { 
                 
                 sh """
                     
