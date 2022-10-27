@@ -1,12 +1,12 @@
 pipeline {
-    agent {label 'ec2-slave'}  // cont-slave / ec2-slave
+    agent {label 'ec2agent'}  // cont-slave / ec2-slave
     
     tools {
 
         git "Default"
     }
         
-        stage('Ci') {
+        stage('CI') {
             steps {
                     
                 withCredentials([usernamePassword(credentialsId: 'Dockerhub', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) { 
