@@ -5,14 +5,14 @@ pipeline {
 
         git "Default"
     }
-    stages {
-        stage('Preperation') {
-            steps {
-                // Get some code from a GitHub repository
-                git 'https://github.com/mahmoud254/jenkins_nodejs_example.git'
+    // stages {
+    //     stage('Preparation') {
+    //         steps {
+    //             // Get some code from a GitHub repository
+    //             git 'https://github.com/mahmoud254/jenkins_nodejs_example.git'
 
-            }
-        }
+    //         }
+    //     }
         
         stage('Ci') {
             steps {
@@ -42,13 +42,13 @@ pipeline {
    
    //////////////
    
-        stage('Print Branch name') {
-            steps {
+        // stage('Print Branch name') {
+        //     steps {
                     
-                 echo "${env.GIT_BRANCH}"
+        //          echo "${env.GIT_BRANCH}"
 
-            }
-        }       
+        //     }
+        // }       
    
    
    
