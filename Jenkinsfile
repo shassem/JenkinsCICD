@@ -31,7 +31,7 @@ pipeline {
     //     }
     // }         
 
-//////////////
+///////////////
 
     stage('Print Branch name') {
         steps {
