@@ -5,6 +5,13 @@ pipeline {
         git "Default"
     }
     stages{
+         stage('Preperation') {
+            steps {
+                // Get some code from a GitHub repository
+                git 'https://github.com/shassem/JenkinsCICD.git'
+
+            }
+        }
         
         stage('CI') {
             steps {
