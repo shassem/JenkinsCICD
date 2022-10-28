@@ -1,5 +1,9 @@
 pipeline {
     agent {label 'ec2agent'}  // cont-slave / ec2-slave
+    tools {
+
+        git "Default"
+    }
     stages{
         
         stage('CI') {
