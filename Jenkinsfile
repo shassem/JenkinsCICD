@@ -11,9 +11,9 @@ pipeline {
                 
                 sh """
                     
-                    docker build -f dockerfile -t nodeapp:$BUILD_NUMBER .
+                    docker build -f dockerfile -t shassem/nodeapp:$BUILD_NUMBER .
                     docker login -u ${USERNAME} -p ${PASSWORD}
-                    docker push nodeapp:$BUILD_NUMBER
+                    docker push shassem/nodeapp:$BUILD_NUMBER
                     
                 """
                 
@@ -25,7 +25,7 @@ pipeline {
         stage('CD') {
             steps {
                     
-                    sh "docker run -d -p 3000:3000 nodeapp:$BUILD_NUMBER"
+                    sh "docker run -d -p 3000:3000 shassem/nodeapp:$BUILD_NUMBER"
 
             }
         }
