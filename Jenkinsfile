@@ -1,17 +1,8 @@
 pipeline {
-    agent {label 'ec2agent'}  // cont-slave / ec2-slave
-    tools {
+    agent {label 'ec2agent'}  
 
-        git "Default"
-    }
     stages{
-         stage('Preperation') {
-            steps {
-                // Get some code from a GitHub repository
-                git 'https://github.com/shassem/JenkinsCICD.git'
 
-            }
-        }
         
         stage('CI') {
             steps {
